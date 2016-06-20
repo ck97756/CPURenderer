@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="./index.css"/>
+		<script src="./js/object.js"></script>
+		<script src="./js/point.js"></script>
+		<script src="./js/ui.js"></script>
+		<script src="./js/graphic.js"></script>
+		<script src="./js/plane.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<div id="menuBar">
+			<span class="menuBarButton" onclick="changeDrawMethod(this);">Ortho</span>
+			<span class="menuBarButton" onclick="showPoint=!showPoint;clearTimeout(drawingPlane);prints();">Point</span>
+			<span class="menuBarButton" onclick="showLine=!showLine;prints();">Line</span>
+			<span class="menuBarButton" onclick="showPlane=!showPlane;prints();">Plane</span>
+			<span class="menuBarButton" onclick="showAxle=!showAxle;prints();">Axle</span>
+			<span class="menuBarButton" onclick="menuOn(this)">Menu</span>
+			<!--<span class="menuBarButton" onclick="render()">Render</span>-->
+			<div id="info">
+				
+			</div>
+		</div>
+		<div id="objectManager">
+			<div class="optionBox">
+				<div class="optionTitle">Shading</div>
+				<div class="options" onclick="objects[select].shading=0;drawPlane(select,0,false);">None</div>
+				<div class="options" onclick="objects[select].shading=1;drawPlane(select,0,false);">Flat</div>
+				<div class="options" onclick="objects[select].shading=2;drawMethod();drawPlane(select,0,false);">Gouraud</div>
+				<div class="options" onclick="objects[select].shading=3;drawMethod();drawPlane(select,0,false);">Phong</div>
+			</div>
+			<div class="optionBox">
+				<div class="optionTitle">Color</div>
+				<div class="options" onclick="objects[select].color=new Color(255, 255, 255); drawMethod(); drawPlane(select,0,false);">White</div>
+				<div class="options" onclick="objects[select].color=new Color(127, 127, 127); drawMethod(); drawPlane(select,0,false);">Gray</div>
+				<div class="options" onclick="objects[select].randomColor(); drawMethod(); drawPlane(select,0,false);">Random Color</div>
+			</div>
+			<div class="optionBox">
+				<div class="optionTitle">Command</div>
+				<div id="optionC">
+					<form onsubmit="commanding();return false;">
+						<input type="text" id="command"/>
+					</form>
+				</div>
+				<div id="response">
+				</div>
+			</div>
+		</div>
+		<div id="ObjectManager">
+			<select id="objectSelected" onchange="changeObject();">
+			</select>
+			<form id="inputForm" style="display:none;" onsubmit="return false;">
+				<input type="file" onchange="inputFileB()" style="display:none;" id="inputfile"/>
+			</form>
+			<div id="newObjectB" onclick="inputFile();">+</div><div id="deleteObjectB" onclick="deleteObject();">-</div>
+		</div>
+	</body>
+</html>

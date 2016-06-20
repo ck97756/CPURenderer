@@ -1,0 +1,102 @@
+html{margin:0;padding:0;}body{margin:0;padding:0;line-height: 1.4; font-family: Helvetica, Arial; overflow: hidden}
+
+#canvas{
+	background:#333;
+	position:absolute;
+}
+
+#menuBar{
+	background:#222; 
+	height:1.5em;
+	width:100%;
+	position:absolute;
+}
+
+#ObjectManager{
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	width:200px;
+}
+
+
+#newObjectB, #deleteObjectB{
+	text-align:center;
+	display:inline-block;
+	height:20px;
+	width:20px;
+	color:white;
+	background:#222;
+}
+
+#newObjectB:hover, #deleteObjectB:hover, .menuBarButton:hover{
+	background:#1eb6e9;
+}
+
+#objectSelected{
+	width:154px;
+}
+
+.menuBarButton{
+	display: inline-block;
+	background: #555;
+	color:#fff;
+	border-radius: 5px 5px 0px 0px;
+	width:80px;
+	margin-left:5px;
+	text-align: center;
+	text-overflow: ellipsis;
+}
+
+#info{
+	display: inline-block;
+	float:right;
+}
+
+#objectManager{
+	width:200px;
+	position: absolute;
+	right: 20px;
+	top:30px;
+	display: block;
+}
+
+.optionTitle{
+	border-radius:5px 5px 0 0;
+	text-align: center;
+	padding-bottom: 2px;
+}
+
+.options{
+	background: #666;
+	padding:2px 10px;
+}
+
+.options:hover{
+	background:#1eb6e9;
+}
+
+.optionBox{
+	width:200px;
+	color:#fff;
+	background:#555;
+	border-radius:5px;
+	padding: 2px 0 5px 0;
+	margin-top:20px;
+}
+
+#command{
+	width:180px;
+	margin: auto;
+}
+
+#optionC{
+	background: #666;
+	text-align:center;
+	padding:2px 0;
+}
+
+#response{
+	background: #666;
+	padding:2px 10px;
+}
